@@ -19,8 +19,8 @@ from paramiko import SSHException
 
 from pyinfra import logger
 
-from .ssh import run_shell_command
 from .util import underscore, make_hash
+from .connectors.ssh import run_shell_command
 
 
 # Index of snake_case facts -> CamelCase classes

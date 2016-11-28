@@ -13,7 +13,7 @@ from termcolor import colored
 from pyinfra import logger
 from pyinfra.api.exceptions import PyinfraError
 
-from .ssh import run_shell_command, put_file
+from .connectors.ssh import run_shell_command, put_file
 
 
 def _run_op(state, hostname, op_hash):

@@ -18,6 +18,7 @@ Usage:
 Deploy options:
     DEPLOY               Deploy script filename.
     -i INVENTORY         Inventory script filename or single hostname.
+       =CONNECTOR        Use a connection adapter instead of SSH and the inventory.
     --run OP ARGS        Run a single operation with args.
           COMMAND        Run a command using the server.shell operation.
     --fact FACT          Name of fact to run/test.
@@ -44,6 +45,7 @@ Config options:
 
 Experimental options:
     --enable-pipelining  Enable fact pipelining.
+    --enable-local       Enable local SSH connector.
 '''
 
 from __future__ import division, unicode_literals, print_function
@@ -73,12 +75,12 @@ from pyinfra.cli import (
 )
 
 from pyinfra.api import State
-from pyinfra.api.ssh import connect_all
 from pyinfra.api.operation import add_op
 from pyinfra.api.operations import run_ops
 from pyinfra.api.attrs import FallbackAttrData
 from pyinfra.api.facts import get_facts
 from pyinfra.api.exceptions import PyinfraError
+from pyinfra.api.connectors.ssh import connect_all
 
 
 # Don't write out deploy.pyc/config.pyc etc

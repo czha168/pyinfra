@@ -13,7 +13,7 @@ from paramiko import (
 )
 
 # Patch in paramiko fake classes
-from pyinfra.api import ssh
+from pyinfra.api.connectors import ssh
 from .paramiko_util import (
     FakeSSHClient, FakeSFTPClient, FakeRSAKey,
     FakeAgentRequestHandler, FakeChannel, FakeBuffer
@@ -22,10 +22,10 @@ from .paramiko_util import (
 
 from pyinfra import pseudo_state, pseudo_host
 from pyinfra.api import Inventory, Config, State
-from pyinfra.api.ssh import connect_all, connect
 from pyinfra.api.operation import add_op, add_limited_op
 from pyinfra.api.operations import run_ops
 from pyinfra.api.exceptions import PyinfraError, NoHostError, NoGroupError
+from pyinfra.api.connectors.ssh import connect_all, connect
 
 from pyinfra.modules import files, server
 

@@ -3,7 +3,7 @@
 # Desc: example of how to deploy via the pyinfra API
 
 from gevent import monkey
-monkey.patch_all() # async things (speed++, optional)
+monkey.patch_all()  # noqa async things (speed++, optional)
 
 import json
 import logging
@@ -11,8 +11,8 @@ import logging
 from pyinfra.api import Inventory, Config, State
 from pyinfra.api.operation import add_op, add_limited_op
 from pyinfra.api.operations import run_ops
-from pyinfra.api.ssh import connect_all
 from pyinfra.api.facts import get_facts
+from pyinfra.api.connectors.ssh import connect_all
 
 from pyinfra.modules import server, files
 

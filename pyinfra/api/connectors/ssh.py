@@ -1,5 +1,5 @@
 # pyinfra
-# File: pyinfra/api/ssh.py
+# File: pyinfra/api/connectors/ssh.py
 # Desc: handle all SSH related stuff
 
 from __future__ import division, unicode_literals, print_function
